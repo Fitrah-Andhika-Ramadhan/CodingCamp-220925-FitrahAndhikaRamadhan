@@ -31,12 +31,12 @@ p { color: var(--muted); line-height: 1.6; }
 
 main {
   width: 100%;
-  margin: 100px auto 0;
+  margin: 0 auto;
   padding: 0;
 }
 
 section {
-  padding: 64px 0;
+  padding: 10px 0;
   animation: fadeIn 0.5s ease-out forwards;
   opacity: 0;
 }
@@ -99,12 +99,27 @@ hr { border: none; height: 1px; background: var(--border); margin: 40px 0; }
 .nav-links a:hover { background: var(--primary-light); color: var(--primary); }
 
 /* ===== Hero ===== */
-.hero-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 32px; }
+.hero-container {
+  display: flex;
+  flex-direction: column; /* biar isi ditumpuk vertikal */
+  align-items: flex-start; /* teks rata kiri */
+  justify-content: flex-start; /* isi kontainer mulai dari atas */
+  height: 100%;
+  padding-top: 20px; /* kasih jarak dari atas biar gak nempel */
+  margin-top: 20px;
+}
+.hero-text {
+  margin-bottom: 20px; /* beri spasi sebelum banner */
+}
+
 .hero-banner {
   height: 250px;
+  width: 100%;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--primary-light), #dbeafe);
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--primary);
   font-weight: 600;
   font-size: 1.5rem;
